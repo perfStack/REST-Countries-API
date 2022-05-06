@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+.header {
+  box-shadow: 0 0.2rem 0.4rem 0 v.$shadow-vlGray;
+  margin-bottom: v.$space-l;
+
+  &__cont {
+    @include m.center-content;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: v.$max-cont-width;
+    padding: v.$space-xs 0;
+  }
+
+  &__theme-cont {
+    align-items: center;
+    display: flex;
+  }
+}

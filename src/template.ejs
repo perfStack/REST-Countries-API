@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST api</title>
+    <% for (var css in htmlWebpackPlugin.files.css) { -%>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet" />
+    <% } -%>
+    <link
+      rel="prefetch"
+      href="<%= require('./assets/fonts/NunitoSans-Regular.woff2') %>"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="prefetch"
+      href="<%= require('./assets/icons/MaterialIconsOutlined-Regular.woff2') %>"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="prefetch"
+      href="<%= require('./assets/icons/MaterialIconsOutlined-Regular.otf') %>"
+      type="font/otf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preconnect"
+      href="https://upload.wikimedia.org"
+      type="image/svg+xml"
+    />
+    <% for (var js in htmlWebpackPlugin.files.js) { -%>
+    <script defer src="<%= htmlWebpackPlugin.files.js[js] %>"></script>
+    <% } -%>
+  </head>
+  <body>
+    <noscript>Please enable javascript for this application to work</noscript>
+    <header class="header">
+      <div class="header__cont">
+        <div class="header__title">
+          <h1 class="heading-main">Where in the world?</h1>
+        </div>
+        <div class="header__theme-cont">
+          <div class="theme theme--light hidden">
+            <div class="theme__icon-cont">
+              <span class="material-icons">light_mode</span>
+            </div>
+            <div class="theme__text-cont">
+              <p class="theme__text">Light Mode</p>
+            </div>
+            <!-- dark_mode, contrast -->
+          </div>
+          <div class="theme theme--dark">
+            <div class="theme__icon-cont">
+              <span class="material-icons">dark_mode</span>
+            </div>
+            <div class="theme__text-cont">
+              <p class="theme__text">Dark Mode</p>
+            </div>
+            <!-- dark_mode, contrast -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <div class="navbar__cont">
+        <form class="navbar__form" autocomplete="off">
+          <div class="searchbox">
+            <div class="searchbox__cont">
+              <span
+                class="material-icons searchbox__icon searchbox__icon--search"
+                >search</span
+              >
+              <input
+                class="searchbox__input"
+                id="js-countrySearchbox"
+                type="search"
+                placeholder="Search for a country..."
+              />
+              <span
+                class="material-icons searchbox__icon searchbox__icon--close hidden"
+                >close</span
+              >
+            </div>
+            <div class="searchbox__submit hidden">
+              <div class="searchbox__submit__cont">
+                <a href="#" class="submitbtn">
+                  <span class="material-icons">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+            <div class="searchbox__list-cont visually-hidden">
+              <ol class="searchbox__list">
+                <li class="searchbox__list-item" data-cca3="">Uruguay</li>
+                <li class="searchbox__list-item" data-cca3="">Paraguay</li>
+                <li class="searchbox__list-item" data-cca3="">Gambia</li>
+                <li class="searchbox__list-item" data-cca3="">Djibouti</li>
+              </ol>
+            </div>
+          </div>
+          <div class="dropdown-box">
+            <div class="dropdown-box__select">
+              <span class="dropdown-box__selected" data-region=""
+                >All regions</span
+              >
+              <div class="dropdown-box__icon-cont">
+                <span class="material-icons dropdown-box__icon"
+                  >keyboard_arrow_down</span
+                >
+              </div>
+              <div class="dropdown-box__list-cont visually-hidden">
+                <ul class="dropdown-box__list">
+                  <li class="dropdown-box__list-item" data-region="allRegions">
+                    All Region
+                  </li>
+                  <li class="dropdown-box__list-item" data-region="africa">
+                    Africa
+                  </li>
+                  <li class="dropdown-box__list-item" data-region="americas">
+                    Americas
+                  </li>
+                  <li class="dropdown-box__list-item" data-region="asia">
+                    Asia
+                  </li>
+                  <li class="dropdown-box__list-item" data-region="europe">
+                    Europe
+                  </li>
+                  <li class="dropdown-box__list-item" data-region="oceania">
+                    Oceania
+                  </li>
+                  <li class="dropdown-box__list-item" data-region="antarctic">
+                    Antarctic
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <div class="backbtn hidden">
+      <div class="backbtn__cont">
+        <div class="backbtn__text-cont">
+          <a href="#" class="backbtn__text">Back </a>
+        </div>
+        <div class="backbtn__icon-cont">
+          <span class="material-icons backbtn__icon">arrow_back</span>
+        </div>
+      </div>
+    </div>
+
+    <main class="main">
+      <div class="main__cont">
+        <!-- <article class="country">
+          <div class="country__cont">
+            <div class="country__img-cont">
+              <img
+                src="https://flagcdn.com/uy.svg"
+                alt="Uruguay flag"
+                class="country__img"
+              />
+            </div>
+            <div class="country__content-cont">
+              <h1 class="country__title">Uruguay</h1>
+
+              <p class="country__content">
+                <span class="material-icons country__icons">people</span>
+                <span class="country__content__title">Population: </span>
+                <span class="country__content__result"> 3.4</span> M
+              </p>
+              <p class="country__content">
+                <span class="material-icons country__icons"
+                  >travel_explore</span
+                >
+                <span class="country__content__title">Region: </span>
+                <span class="country__content__result"> Americas</span>
+              </p>
+              <p class="country__content">
+                <span class="material-icons country__icons">festival</span>
+                <span class="country__content__title">Capital: </span>
+                <span class="country__content__result"> Montevideo</span>
+              </p>
+            </div>
+          </div>
+        </article> -->
+      </div>
+    </main>
+
+    <div class="country-detail hidden">
+      <div class="country-detail__cont">
+        <div class="country-detail__cross">
+          <span class="material-icons country-detail__icon">close</span>
+        </div>
+        <div class="country-detail__img-cont">
+          <img
+            src="https://flagcdn.com/uy.svg"
+            alt="Uruguay flag"
+            class="country-detail__img"
+          />
+        </div>
+        <section class="country-detail__content-cont">
+          <h2 class="country-detail__heading">Uruguay</h2>
+          <div class="country-detail__description">
+            <p class="country-detail__content">
+              <span class="country-detail__content__title">Native name</span>:
+              <span
+                class="country-detail__content__result js-country-native-name"
+                >Oriental Republic of Uruguay</span
+              >
+            </p>
+            <p class="country-detail__content">
+              <span class="country-detail__content__title">Population</span>:
+              <span
+                class="country-detail__content__result js-country-population"
+                >3.4</span
+              >
+            </p>
+            <p class="country-detail__content">
+              <span class="country-detail__content__title">Region</span>:
+              <span class="country-detail__content__result js-country-region"
+                >Americas</span
+              >
+            </p>
+            <p class="country-detail__content">
+              <span class="country-detail__content__title">Sub Region</span>:
+              <span
+                class="country-detail__content__result js-country-sub-region"
+                >South America</span
+              >
+            </p>
+            <p class="country-detail__content">
+              <span class="country-detail__content__title">Capital</span>:
+              <span class="country-detail__content__result js-country-capital"
+                >Uruguay</span
+              >
+            </p>
+            <p class="country-detail__content">
+              <span class="country-detail__content__title"
+                >Top Level Domain</span
+              >:
+              <span
+                class="country-detail__content__result js-country-top-level-domain"
+                >.uy</span
+              >
+            </p>
+            <p class="country-detail__content">
+              <span class="country-detail__content__title">Currencies</span>:
+              <span
+                class="country-detail__content__result js-country-currencies"
+                >Uruguayan peso</span
+              >
+            </p>
+            <p class="country-detail__content">
+              <span class="country-detail__content__title">Languages</span>:
+              <span class="country-detail__content__result js-country-languages"
+                >Spanish</span
+              >
+            </p>
+          </div>
+
+          <div class="country-detail__border-countries">
+            <p class="country-detail__border-countries__title">
+              Border Countries:
+            </p>
+            <ul class="country-detail__border-countries__list hidden">
+              <li class="country-detail__border-country">Argentina</li>
+              <li class="country-detail__border-country">Brazil</li>
+            </ul>
+            <p class="country-detail__border--none-text hidden">
+              No bordering country
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="error-modal hidden">
+      <div class="error-modal__cont">
+        <div class="error-modal__icon-cont">
+          <span class="material-icons error-modal-icon">error</span>
+        </div>
+        <div class="error-modal__content-cont">
+          <p class="error-modal__content"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

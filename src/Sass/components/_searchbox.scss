@@ -1,0 +1,98 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+$shadow-vlDark: 0 0 0.8rem 0 v.$shadow-vlGray;
+
+.searchbox {
+  align-items: center;
+  border-radius: 0.4rem;
+  display: flex;
+  position: relative;
+
+  &__cont {
+    border: none;
+    border-radius: inherit;
+    box-shadow: $shadow-vlDark;
+    display: inline-block;
+    min-height: 5rem;
+    position: relative;
+    width: 40rem;
+  }
+
+  &__input {
+    border: none;
+    border-radius: inherit;
+    color: inherit;
+    font-size: v.$font-s;
+    min-height: inherit;
+    padding: 0.7rem 0.8rem 0.7rem 7rem;
+    width: inherit;
+  }
+
+  &__icon {
+    position: absolute;
+
+    &--search {
+      left: 2rem;
+      pointer-events: none;
+      top: 1.4rem;
+    }
+
+    &--close {
+      cursor: pointer;
+      padding: v.$space-xxxs;
+      right: 0.3rem;
+      top: 0.5rem;
+    }
+  }
+
+  .material-icons#{&}__icon--search {
+    color: v.$color-light-lGray;
+  }
+  .material-icons#{&}__icon--close {
+    color: hsl(0deg, 0%, 14%);
+  }
+
+  &__list-cont {
+    background-color: v.$color-pure-white;
+    box-shadow: $shadow-vlDark;
+    left: 5rem;
+    max-height: 80vh;
+    overflow: scroll;
+    padding: v.$space-xxs 0;
+    position: absolute;
+    top: 5.5rem;
+    width: 35rem;
+    z-index: 2;
+  }
+
+  &__list-item {
+    cursor: pointer;
+    font-size: v.$font-s;
+    padding: v.$space-xxxs v.$space-xs v.$space-xxxs v.$space-s;
+
+    &:hover {
+      background-color: v.$color-light-vlGray;
+    }
+  }
+
+  &__submit {
+    &__cont {
+      background-color: rgb(136, 136, 136);
+      background-image: linear-gradient();
+      border-radius: 0.4rem;
+      box-shadow: $shadow-vlDark;
+      color: v.$color-white;
+      height: 5rem;
+      margin-left: v.$space-xxs;
+    }
+
+    .submitbtn {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      padding: 0 v.$space-xs;
+    }
+  }
+}

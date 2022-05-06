@@ -1,0 +1,127 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+.country-detail {
+  background-color: inherit;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.2rem 0.4rem 0 v.$shadow-vlGray;
+  box-sizing: border-box;
+  color: inherit;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+
+  &__cont {
+    box-sizing: inherit;
+    display: flex;
+    min-height: 30vh;
+    min-width: 88vw;
+    padding: v.$space-s v.$space-xs;
+    position: relative;
+  }
+
+  &__cross {
+    cursor: pointer;
+    padding: v.$space-xxs v.$space-m v.$space-xxs v.$space-s;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .material-icons#{&}__icon {
+    color: hsl(0deg, 0%, 12%);
+    font-size: 3.5rem;
+  }
+
+  &__img-cont {
+    display: flex;
+    flex-direction: column;
+    height: 41rem;
+    justify-content: center;
+    margin-right: v.$space-xl;
+    width: 55rem;
+  }
+
+  &__img {
+    border-radius: 0.4rem;
+    box-shadow:
+      0 0 0.1rem 0.1rem hsla(0deg, 0%, 89%, 0.45),
+      0 0 0.3rem 0.3rem hsla(0deg, 0%, 94%, 0.45),
+      0 0 0.6rem 0.6rem hsla(0deg, 0%, 94%, 0.45);
+
+    // This is to prevent overflowing the container
+    // cannot use width as it will pad the img with white border
+    // if the img does not use all the height
+    max-height: 100%;
+    width: 100%;
+  }
+
+  &__content-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
+
+  &__description {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: v.$space-xxs;
+
+    // max-height: 40%;
+  }
+
+  &__content {
+    font-size: v.$font-s;
+    margin-bottom: v.$space-xxxxs;
+
+    &__title {
+      font-weight: 600;
+    }
+
+    &__result {
+      line-height: 1.5;
+      padding-left: v.$space-xxxxs;
+    }
+  }
+
+  &__heading {
+    font-size: v.$font-l;
+    margin-bottom: v.$space-m;
+  }
+
+  &__border-countries {
+    display: flex;
+    font-size: v.$font-s;
+
+    &__title {
+      font-weight: 600;
+      margin-right: v.$space-xxxs;
+      padding: v.$space-xxxxs 0;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__border-country {
+    box-shadow: 0 0.2rem 0.4rem 0 v.$shadow-vlGray;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: v.$space-xxxs;
+    padding: v.$space-xxxxs v.$space-xxs;
+
+    &:not(:last-child) {
+      margin-right: v.$space-xxs;
+    }
+  }
+
+  &__border--none-text {
+    padding-top: 0.5rem;
+  }
+}

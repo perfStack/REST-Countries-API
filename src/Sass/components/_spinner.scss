@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+.spinner {
+  &-cont {
+    @include m.transform-center;
+  }
+
+  .material-icons.spinner-icon {
+    animation: rotate 2s infinite linear;
+    font-size: 10rem;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+}

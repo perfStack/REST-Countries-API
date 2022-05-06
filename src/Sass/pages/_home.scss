@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+section {
+  @include m.center-content;
+
+  max-width: v.$max-cont-width;
+}
+
+.navbar {
+  @include m.center-content;
+
+  margin-bottom: v.$space-xl;
+  max-width: v.$max-cont-width;
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+  }
+}
+
+.main {
+  @include m.center-content;
+
+  max-width: v.$max-cont-width;
+
+  &__cont {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

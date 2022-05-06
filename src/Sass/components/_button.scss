@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.backbtn {
+  @include m.center-content;
+
+  max-width: v.$max-cont-width;
+
+  &__cont {
+    align-items: center;
+    background-color: inherit;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.8rem 0 v.$shadow-vlGray;
+    cursor: pointer;
+    display: flex;
+    margin: 0 0 v.$space-l auto;
+    max-width: 6.5rem;
+    padding: v.$space-xxxs (v.$space-xxxs * 2);
+  }
+
+  &__text-cont {
+    padding-right: v.$space-xxs;
+  }
+
+  &__text {
+    font-size: v.$font-s;
+  }
+
+  &__icon-cont {
+    align-items: center;
+    display: flex;
+  }
+
+  .material-icons.backbtn__icon {
+    color: hsl(0deg, 0%, 14%);
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,62 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+@font-face {
+  font-display: swap;
+  font-family: 'Nunito sans';
+  font-weight: 300;
+  src: url('../assets/fonts/NunitoSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Nunito sans';
+  font-weight: 600;
+  src: url('../assets/fonts/NunitoSans-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Nunito sans';
+  font-weight: 800;
+  src: url('../assets/fonts/NunitoSans-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('MaterialIconsOutlined-Regular'),
+    url('../assets/icons/MaterialIconsOutlined-Regular.woff2') format('woff2'),
+    url('../assets/icons/MaterialIconsOutlined-Regular.otf') format('opentype');
+}
+
+.heading-main {
+  font-weight: 800;
+}
+
+.material-icons {
+  direction: ltr;
+  display: inline-block;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: 'Material Icons';
+  font-size: 2.4rem; /* Preferred icon size */
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizelegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+}

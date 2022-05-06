@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+.error-modal {
+  @include m.transform-center;
+
+  background-color: inherit;
+  border-radius: 0.4rem;
+  color: inherit;
+  z-index: 11;
+
+  &__cont {
+    align-items: center;
+    border-radius: v.$br-s;
+    box-shadow: 0 0 1rem 0.2rem v.$shadow-vlGray;
+    display: flex;
+    min-height: 1rem;
+    min-width: 1rem;
+    padding: v.$space-xxs v.$space-m;
+  }
+
+  &__icon-cont {
+    margin-right: v.$space-s;
+  }
+
+  .material-icons#{&}-icon {
+    color: hsl(0deg, 92%, 30%);
+    font-size: 4rem;
+  }
+
+  &__content-cont {
+    font-size: 1.9rem;
+  }
+}

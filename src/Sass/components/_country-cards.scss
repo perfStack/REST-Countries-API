@@ -1,0 +1,85 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+.country {
+  margin-bottom: v.$space-m;
+  margin-right: v.$space-m;
+
+  &__cont {
+    border-radius: 0.4rem;
+    box-shadow: 0 0.2rem 0.4rem v.$shadow-vlGray;
+    cursor: pointer;
+    height: 38rem;
+    overflow: hidden;
+    width: 25rem;
+  }
+
+  &__img-cont {
+    display: flex;
+    height: 40%;
+    overflow: hidden;
+    width: inherit;
+  }
+
+  &__img {
+    height: 100%;
+    transition: all 0.2s linear;
+    width: 100%;
+  }
+
+  &:hover &__img {
+    transform: scale(1.12);
+  }
+
+  &__content-cont {
+    padding: v.$space-s v.$space-xxs v.$space-xxxs v.$space-s;
+  }
+
+  &__title {
+    font-size: v.$font-m;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: v.$space-s;
+  }
+
+  &__content {
+    display: flex;
+    font-size: v.$font-s;
+
+    &:not(:last-child) {
+      margin-bottom: v.$space-xxs;
+    }
+
+    &__title,
+    &__result,
+    &__postfix {
+      padding-top: v.$space-xxxxxs;
+    }
+
+    &__title {
+      padding-right: v.$space-xxxs;
+    }
+
+    &__result {
+      font-weight: 600;
+      padding-right: v.$space-xxxxxs;
+
+      &--region {
+        color: v.$color-text-vdGray;
+      }
+    }
+  }
+
+  &__content &__icons {
+    padding-right: v.$space-xxxs;
+  }
+
+  &__icon {
+    padding-right: 0.3rem;
+  }
+
+  .material-icons#{&}__icon {
+    color: hsl(0deg, 0%, 35%);
+  }
+}

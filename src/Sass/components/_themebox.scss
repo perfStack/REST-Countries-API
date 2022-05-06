@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+.theme {
+  @include m.flex-center;
+
+  cursor: pointer;
+  flex-direction: row;
+  padding: 1rem;
+
+  &--dark:hover {
+    box-shadow: 0 0.2rem 0.4rem 0 v.$shadow-vlGray;
+  }
+
+  &__icon-cont {
+    @include m.flex-center;
+
+    margin-right: v.$space-xxxs;
+    min-height: v.$space-s - 0.4rem;
+    min-width: v.$space-s - 0.4rem;
+  }
+
+  &__icon {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: v.$font-s;
+  }
+}

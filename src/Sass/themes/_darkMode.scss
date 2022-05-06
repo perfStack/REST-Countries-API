@@ -1,0 +1,137 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+$shadow-vd-1: 0 0 0.8rem 0 v.$color-dark-vdBlue;
+$shadow-vd-2: 0 0.2rem 0.4rem hsl(209deg, 30%, 14%);
+$shadow-vd-3: 0 0.2rem 0.4rem rgb(14, 20, 27);
+
+body.dark-mode {
+  background-color: v.$color-dark-vdBlue;
+  color: v.$color-pure-white;
+}
+
+.dark-mode {
+  .header {
+    background-color: v.$color-dark-Blue;
+    box-shadow: 0 0.2rem 0.4rem 0 v.$color-dark-vdBlue;
+  }
+
+  .material-icons.spinner {
+    color: v.$color-white;
+  }
+
+  // theme box
+  .theme {
+    &--light {
+      &:hover {
+        box-shadow: $shadow-vd-1;
+      }
+    }
+  }
+
+  // Searchbox
+  .searchbox {
+    &__cont {
+      box-shadow: $shadow-vd-1;
+    }
+
+    &__list-cont {
+      background-color: v.$color-dark-vdBlue;
+      box-shadow: $shadow-vd-1;
+    }
+
+    &__list-item:hover {
+      background-color: v.$color-dark-Blue;
+    }
+
+    &__input {
+      background-color: v.$color-dark-Blue;
+      caret-color: v.$color-pure-white;
+    }
+
+    .material-icons.searchbox__icon--close {
+      color: hsl(0deg, 0%, 85%);
+    }
+
+    &__submit {
+      &__cont {
+        background-color: rgb(60, 80, 98);
+        box-shadow: $shadow-vd-1;
+        color: hsl(0deg, 5%, 89%);
+      }
+    }
+  }
+
+  // Dropdown box
+  .dropdown-box {
+    background-color: v.$color-dark-Blue;
+    box-shadow: $shadow-vd-1;
+
+    &__list-cont {
+      background-color: v.$color-dark-vdBlue;
+      box-shadow: $shadow-vd-2;
+    }
+
+    &__list-item {
+      &:hover {
+        background-color: v.$color-dark-Blue;
+      }
+    }
+  }
+
+  // Country card
+  .country {
+    &__cont {
+      box-shadow: $shadow-vd-2;
+    }
+
+    .material-icons.country__icon {
+      color: hsl(0deg, 0%, 85%);
+    }
+
+    &__content {
+      &__result--region {
+        color: hsl(0deg, 0%, 85%);
+      }
+    }
+  }
+
+  // Country detail
+  .country-detail {
+    box-shadow: $shadow-vd-3;
+
+    .material-icons.country-detail__icon {
+      color: hsl(0deg, 5%, 89%);
+    }
+
+    &__border-country {
+      box-shadow: $shadow-vd-2;
+    }
+
+    &__img {
+      box-shadow:
+        0 0 0.1rem 0.1rem hsl(209deg, 26%, 17%, 0.45),
+        0 0 0.3rem 0.3rem hsl(209deg, 26%, 17%, 0.45),
+        0 0 0.6rem 0.6rem hsl(209deg, 26%, 17%, 0.45);
+    }
+  }
+
+  // Back btn
+  .backbtn {
+    &__cont {
+      background-color: v.$color-dark-Blue;
+      box-shadow: $shadow-vd-1;
+    }
+
+    .material-icons.backbtn__icon {
+      color: hsl(0deg, 0%, 85%);
+    }
+  }
+
+  .error-modal {
+    &__cont {
+      box-shadow: $shadow-vd-3;
+    }
+  }
+}

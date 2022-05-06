@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as v;
+
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin center-content {
+  margin: 0 auto;
+}
+
+@mixin transform-center {
+  left: 50vw;
+  position: absolute;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+}
+
+// Graceful hiding to ensure assistive technologies can access content
+@mixin visually-hidden {
+  @supports not (clip-path: polygon(0 0, 0 0, 0 0)) {
+    clip: rect(0 0 0 0) !important;
+  }
+
+  // position: absaloute to take the content out of flow
+  // Height and width are set to 1px/.1rem so that it is accessible to screen readers
+  // using margin -1px/-.1rem and other attributes ensures content is hidden from sighted users
+  border: 0 !important;
+  clip-path: polygon(0 0, 0 0, 0 0) !important;
+  height: 0.1rem !important;
+  margin: -0.1rem !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 0.1rem !important;
+}

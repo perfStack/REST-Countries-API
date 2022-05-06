@@ -1,0 +1,167 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+// ###################### Main media queires ######################
+// for larger widths
+@media (min-width: (f.divide(1700) * 1em)) {
+  .country-detail {
+    &__cont {
+      min-width: 150rem;
+    }
+  }
+}
+
+// for smaller widths
+@media (max-width: (f.divide(1200) * 1em)) {
+  .country-detail {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+
+    &__cont {
+      align-items: flex-start;
+      flex-direction: column;
+      max-height: 100vh;
+      min-width: 0;
+      overflow: scroll;
+      padding-left: v.$space-m;
+      width: 60vw;
+    }
+
+    &__img-cont {
+      align-self: center;
+      height: 31rem;
+      margin-bottom: v.$space-xs;
+      margin-right: 0;
+    }
+
+    &__content-cont {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: (f.divide(1100) * 1em)) {
+  .country-detail {
+    left: 15%;
+    transform: translate(0, 0);
+
+    &__cont {
+      width: 70vw;
+    }
+  }
+}
+
+@media (max-width: (f.divide(950) * 1em)) {
+  .country-detail {
+    left: 10%;
+
+    &__cont {
+      width: 80vw;
+    }
+  }
+}
+
+@media (max-width: (f.divide(800) * 1em)) {
+  .country-detail {
+    left: 0;
+    top: 0;
+
+    &__cont {
+      padding-top: v.$space-l;
+      width: 100vw;
+    }
+
+    &__img-cont {
+      height: 25rem;
+    }
+  }
+}
+
+@media (max-width: (f.divide(780) * 1em)) {
+  .navbar {
+    &__form {
+      align-items: flex-start;
+      flex-direction: column-reverse;
+    }
+
+    .dropdown-box {
+      margin-bottom: v.$space-m;
+    }
+  }
+
+  .country-detail {
+    top: 0;
+
+    &__img-cont {
+      width: 50rem;
+    }
+
+    &__cross {
+      right: -2rem;
+      top: -1rem;
+    }
+  }
+}
+
+@media (max-width: (f.divide(660) * 1em)) {
+  html {
+    font-size: f.divide(85) * 10%;
+  }
+}
+
+@media (max-width: (f.divide(580) * 1em)) {
+  .country-detail {
+    &__img-cont {
+      width: 40rem;
+    }
+  }
+}
+
+@media (max-width: (f.divide(550) * 1em)) {
+  .country {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: (f.divide(550) * 1em)) {
+  .country {
+    margin-left: auto;
+    margin-right: 15rem;
+  }
+}
+
+@media (max-width: (f.divide(500) * 1em)) {
+  .country {
+    margin-right: 12rem;
+  }
+}
+
+@media (max-width: (f.divide(460) * 1em)) {
+  .country {
+    margin-right: 10rem;
+  }
+
+  .country-detail {
+    &__cont {
+      padding-left: v.$space-xxxs;
+    }
+  }
+}
+
+@media (max-width: (f.divide(440) * 1em)) {
+  html {
+    font-size: f.divide(80) * 10%;
+  }
+
+  .country-detail {
+    &__img-cont {
+      width: 30rem;
+    }
+
+    &__cont {
+      padding-top: v.$space-m;
+    }
+  }
+}

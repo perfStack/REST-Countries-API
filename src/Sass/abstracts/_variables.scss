@@ -1,0 +1,60 @@
+@use '../abstracts/functions' as f;
+
+//  ######################## Colors ########################
+
+// Primary
+$color-white: hsl(0deg, 0%, 100%);
+
+// Light mode exclusive
+$color-light-vlGray: hsl(0deg, 0%, 88%);
+$color-light-lGray: hsl(0deg, 0%, 52%);
+$color-light-vdBlue: hsl(200deg, 15%, 8%);
+
+// Dark mode exclusive
+$color-dark-Blue: hsl(208deg, 23%, 22%);
+$color-dark-vdBlue: hsl(209deg, 26%, 17%);
+
+// Whites
+$color-pure-white: hsl(0deg, 0%, 100%);
+
+// Blacks
+$color-text-vdGray: hsl(0deg, 0%, 18%);
+
+// ######################## Shadows ########################
+$shadow-vlGray: rgba(138, 138, 138, 0.2);
+$shadow-vlBlack: hsla(0deg, 0%, 0%, 0.1);
+
+//  ######################## Fonts ########################
+$font-xxxl: 6.734rem;
+$font-xxl: 5.025rem;
+$font-xl: 3.79rem;
+$font-l: 2.843rem;
+$font-m: 2.133rem;
+$font-s: 1.6rem;
+$font-xs: 1.2rem;
+$font-xxs: 0.9rem;
+$font-xxxs: 0.676rem;
+
+//  ######################## Spacing ########################
+$space-xxxxl: 12.8rem;
+$space-xxxl: 9.6rem;
+$space-xxl: 8rem;
+$space-xl: 6.4rem;
+$space-l: 4.8rem;
+$space-m: 3.2rem;
+$space-s: 2.4rem;
+$space-xs: 1.6rem;
+$space-xxs: 1.2rem;
+$space-xxxs: 0.8rem;
+$space-xxxxs: 0.4rem;
+$space-xxxxxs: 0.2rem;
+
+// ######################## Others ########################
+$max-cont-width: 88%;
+$tertiary-mb: $space-s;
+$font-nav-dropdown-list: $font-s - 0.1rem;
+$font-footer-list: $font-nav-dropdown-list;
+$size-highlight-section-cont: 42rem;
+$br-s: 0.4rem;
+
+// #2b3945 #202c37

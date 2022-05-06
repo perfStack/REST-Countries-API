@@ -1,0 +1,72 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use '../abstracts/functions' as f;
+
+$shadow-vl: 0 0 0.8rem 0 v.$shadow-vlGray;
+$border-radius-s: 0.4rem;
+
+.dropdown-box {
+  align-items: center;
+  background-color: v.$color-pure-white;
+  border: none;
+  border-radius: $border-radius-s;
+  box-shadow: $shadow-vl;
+  cursor: pointer;
+  display: flex;
+  min-height: 5rem;
+  position: relative;
+
+  &__select {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-width: 15.5rem - v.$space-s;
+    padding: 0 v.$space-s;
+  }
+
+  &__selected {
+    font-size: v.$font-s;
+    margin-right: v.$space-s;
+  }
+
+  &__icon-cont {
+    height: 100%;
+  }
+
+  &__option {
+    background-color: v.$color-pure-white;
+    border-radius: inherit;
+    color: v.$color-light-vdBlue;
+
+    &:not(:last-child) {
+      margin-bottom: v.$space-m;
+    }
+  }
+
+  &__list-cont {
+    background-color: v.$color-pure-white;
+    border-radius: $border-radius-s;
+    box-shadow: $shadow-vl;
+    left: 0;
+    padding: v.$space-xxs 0;
+    position: absolute;
+    top: 5.5rem;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &__list-item {
+    border-radius: $border-radius-s;
+    cursor: pointer;
+    font-size: v.$font-s;
+    padding: v.$space-xxxxs v.$space-xxs v.$space-xxxxs v.$space-m;
+
+    &:hover {
+      background-color: v.$color-light-vlGray;
+    }
+  }
+
+  &__icon--active {
+    transform: rotate(180deg);
+  }
+}

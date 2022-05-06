@@ -1,0 +1,10 @@
+@use 'sass:math';
+@use 'sass:color';
+
+@function divide($dividend, $divisor: 16) {
+  @return math.div($dividend, $divisor);
+}
+
+@function addTransparency($color, $transparency) {
+  @return color.adjust($color, $alpha: $transparency);
+}
