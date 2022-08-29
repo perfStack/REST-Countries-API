@@ -25,6 +25,8 @@
       default-src = "'self'"
       script-src = "'self'"
       style-src = "'self'"
+      img-src = "'self' https://flagcdn.com https://upload.wikimedia.org"
+      connect-src = "'self' https://restcountries.com/v3.1/all"
 
 
 # Static assets
